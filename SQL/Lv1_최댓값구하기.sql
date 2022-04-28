@@ -1,3 +1,3 @@
-# SQL Level_1. 최댓값 구하기
+-- SQL Level_1. 최댓값 구하기
 SELECT MAX(DATETIME) AS 시간 
 FROM ANIMAL_INS
