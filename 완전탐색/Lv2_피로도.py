@@ -1,6 +1,26 @@
 # 완전탐색 LV2 - 피로도
 
-answer = 0
+from itertools import permutations
+
+
+# 1) 순열로 풀기
+def solution(k, dungeons):
+    answer = 0
+
+    for p in permutations(dungeons, len(dungeons)):
+        tmp = k
+        cnt = 0
+
+        for need, spend in p:
+            if tmp >= need:
+                tmp -= spend
+                cnt += 1
+        answer = max(answer, cnt)
+    return answer
+
+
+# 2) 백트래킹으로 풀기
+# answer = 0
 
 def dfs(k, count, dungeons, visited):
     global answer
@@ -14,7 +34,7 @@ def dfs(k, count, dungeons, visited):
             visited[i] = False
 
 
-def solution(k, dungeons):
+def solution2(k, dungeons):
     global answer
     visited = [False] * len(dungeons)
 
