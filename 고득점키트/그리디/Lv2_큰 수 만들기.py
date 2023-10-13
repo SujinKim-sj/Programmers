@@ -7,7 +7,7 @@ def solution(number, k):
             stack.append(i)
             continue
         if k > 0:
-            while stack[-1] < i:
+            while stack[-1] < i:    # i가 스택의 마지막 숫자보다 크면 기존 스택 숫자 제거하고 i 삽입
                 stack.pop()
                 k -= 1
 
